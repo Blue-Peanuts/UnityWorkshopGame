@@ -14,11 +14,11 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        Enemy enemy = collider.GetComponent<Enemy>();
+        Enemy enemy = collider.gameObject.GetComponent<Enemy>();
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
-            Destroy(gameObject);
+            Destroy(gameObject); // gameObject is the GameObject this script is attached to
         }
     }
 }
